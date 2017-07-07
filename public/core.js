@@ -60,22 +60,22 @@ function mainController($scope, $http) {
                 $("#imgPerfil").css('display','inline');
                 $scope.loginDisplay = "Hola, ";
                 
-                $scope.$apply();
-                
-                
+                $scope.$apply();       
             }            
             // ...
             }).catch(function(error) {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
+            console.log(error);
             // The email of the user's account used.
             var email = error.email;
             // The firebase.auth.AuthCredential type that was used.
             var credential = error.credential;
             // ...
-        }).then(function(){
-            writeUserData($scope.userId,$scope.email, $scope.displayName, $scope.photoUrl);
+        }).then(function(data){
+            console.log(data);
+            writeUserData($scope.userId, $scope.email, $scope.displayName, $scope.photoUrl);
             writeUserLogin($scope.userId,$scope.displayName, $scope.photoUrl);
         });
         
