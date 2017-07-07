@@ -1,0 +1,29 @@
+{
+  "name": "generic-login",
+  "version": "1.0.0",
+  "description": "Autenticacion con firebase",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facusan/generic-login.git"
+  },
+  "keywords": [
+    "autenticacion",
+    "firebase"
+  ],
+  "author": "Facundo Sanchez Galindo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/facusan/generic-login/issues"
+  },
+  "homepage": "https://github.com/facusan/generic-login#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "morgan"     : "~1.2.2",
+    "body-parser": "~1.5.2",
+    "method-override": "~2.1.2"
+  }
+}

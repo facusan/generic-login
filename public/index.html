@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="login" lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="Facundo Sanchez Galindo">
+    <!--<link rel="icon" href="../../favicon.ico">-->
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="content/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+
+  <body ng-controller="mainController">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Generic login</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+         <ul class="nav navbar-nav navbar-right">
+              <li class="right">
+                
+                  <a ng-click="login()" style="padding: 8px">
+                    <img id="imgPerfil" src="" class="img-responsive" style="width: 35px;height: 35px;display: none" />
+                    <label style="padding: 4px">{{loginDisplay}} {{displayName}}</label>
+                  </a>
+               </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container" style="padding-top: 50px">
+
+      <div class="row" style="padding-top: 10px">
+        <div class="col-md-4">
+          <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Usuarios online</h3>
+          </div>
+          <div class="panel-body">
+            <ul class="list-group">
+              <li ng-repeat=" user in usersLogin"  class="list-group-item">
+                <img id="imgPerfil" ng-src="{{user.photoURL}}" class="img-responsive" style="width: 35px;height: 35px;display: inline" />
+                {{user.username}}
+              </li>
+            </ul>
+          </div>
+        </div>
+        </div>
+        
+      </div>
+
+    </div><!-- /.container -->
+
+
+    <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDWNrujvOFqtSO5dNszFRERICicvf7Y9eo",
+        authDomain: "generic-login-7a175.firebaseapp.com",
+        databaseURL: "https://generic-login-7a175.firebaseio.com",
+        projectId: "generic-login-7a175",
+        storageBucket: "",
+        messagingSenderId: "728768909313"
+    };
+    firebase.initializeApp(config);
+    </script>
+
+    <!--Google-->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+    <script src="content/js/bootstrap.min.js"></script>
+    <script src="core.js"></script>
+  </body>
+</html>
