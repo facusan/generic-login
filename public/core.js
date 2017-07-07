@@ -74,7 +74,6 @@ function mainController($scope, $http) {
             var credential = error.credential;
             // ...
         }).then(function(data){
-            console.log(data);
             writeUserData($scope.userId, $scope.email, $scope.displayName, $scope.photoUrl);
             writeUserLogin($scope.userId,$scope.displayName, $scope.photoUrl);
         });
